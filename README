@@ -1,1 +1,5 @@
 A vagrant setup for provisioning a wordpress host with Puppet
+
+1. Install Vagrant
+2. git clone https://github.com/MosesMendoza/wp-host.git
+3. cd wp-host && vagrant plugin install vagrant-vbguest && vagrant up
