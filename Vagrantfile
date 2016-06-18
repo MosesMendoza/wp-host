@@ -68,9 +68,11 @@ Vagrant.configure(2) do |config|
      # Install guest additions
      sudo apt-get update
      sudo apt-get install -y dkms
-     sudo mount /dev/cdrom /mnt
+     sudo curl -O http://download.virtualbox.org/virtualbox/5.0.10/VBoxGuestAdditions_5.0.10.iso
+     sudo mount VBoxGuestAdditions_5.0.10.iso -o loop /mnt
      sudo /mnt/VBoxLinuxAdditions.run
-     sudo umount /dev/cdrom
+     sudo umount /mnt
+     rm VBoxGuestAdditions_5.0.10.iso
   SHELL
 
   config.vm.provision "puppet" do |puppet|
